@@ -1,0 +1,114 @@
+<html>
+
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        .container{
+            width: 1200px;
+            display: flex;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .kiri{
+            flex: 1;
+            padding: 0px 50px;
+            box-sizing: border-box;
+        }
+        
+        .kanan{
+            flex: 1;
+            padding: 0px 50px;
+            box-sizing: border-box;
+        }
+
+         button {
+            background-color: #043bf0; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            width: 55%;
+        }
+
+        img{
+            margin-top: 20px;
+            margin-left: 220px;
+            width: 250px;
+            height: 300px;
+        }
+
+        .container .kiri p{
+            margin-top: 70px;
+            margin-left: 60px;
+            font-size: 18px;
+        }
+
+        .container .kiri h1 {
+            margin-left: 60px;
+        }
+
+        .container .kanan p{
+            margin-right: 50px;
+            font-size: 18px;
+        }
+
+        .biru {color: blue;}
+        .merah {color: red;}
+        .pindah {margin-left: 120px;}
+
+    </style>
+
+    <head>
+        <title>Latihan</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="kiri">
+                <h1 id="judul">Mission and Goals</h1>
+                <button type="button" id="tombol">mission</button>
+                <div class="m-4">
+                 <span id= "hasil"></span>
+                </div>
+                <p id="p1">He as spoke avoid given downs money on we. Of properly carriage shutters ye as wandered up repeated moreover. Article evident arrived express highest men did boy. Mistress sensible entirely am so. Quick can manor smart money hopes worth too.Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. Considered use dispatched melancholy sympathize discretion led.</p>
+             </div>
+    
+            <div class="kanan">
+                <h3>goals</h3>
+                <p>Article evident arrived express highest men did boy Mistress sensible entirely am so. Quick can manor smart money hopes worth too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. Considered use dispatched melancholy sympathize discretion led. Oh feel if up to till like.</p>
+                <img src="building.jpeg" id="gambar" alt="">
+            </div>
+        </div>
+
+        <script>
+            const tombol = document.getElementById('tombol');
+            const judull = document.getElementById('judul');
+            const p1 = document.getElementById('p1');
+            const gambar = document.getElementById('gambar');
+            var hasil = document.getElementById('hasil');
+            var no = 1;
+
+            tombol.onclick = function() {
+                judul.classList.toggle('biru')
+                p1.classList.toggle('merah')
+                gambar.classList.toggle('pindah')
+                hasil.innerHTML = 'Button di klik ' + no++ + ' kali';
+            }
+        </script>
+
+    </body>
+</html>
