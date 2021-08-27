@@ -1,114 +1,197 @@
+<!DOCTYPE html>
 <html>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        html, body{
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      font-family: Trebuchet MS, sans-serif;
+      line-height: 1.65;
+      text-align: justify;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.65;
-            text-align: justify;
-        }
+    .container {
+      display: flex;
+      padding: 20px;
+      margin: auto;
+      justify-content: space-between;
+    }
 
-        .container{
-            width: 1200px;
-            display: flex;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        
-        .kiri{
-            flex: 1;
-            padding: 0px 50px;
-            box-sizing: border-box;
-        }
-        
-        .kanan{
-            flex: 1;
-            padding: 0px 50px;
-            box-sizing: border-box;
-        }
+    .button {
+      background-color: #043bf0;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      width: 55%;
+    }
 
-         button {
-            background-color: #043bf0; 
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            width: 55%;
-        }
+    .button.popup {
+      font-size: 16px;
+      width: 30%;
+      background-color: rgb(0, 255, 242);
+      color: black;
+    }
 
-        img{
-            margin-top: 20px;
-            margin-left: 220px;
-            width: 250px;
-            height: 300px;
-        }
+    .img {
+      width: 250px;
+      height: 300px;
+      align-self: flex-end;
+      border-radius: 0.5rem;
+    }
 
-        .container .kiri p{
-            margin-top: 70px;
-            margin-left: 60px;
-            font-size: 18px;
-        }
+    .section {
+      flex: 1;
+    }
 
-        .container .kiri h1 {
-            margin-left: 60px;
-        }
+    .section.dua {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .container .kanan p{
-            margin-right: 50px;
-            font-size: 18px;
-        }
+    .judul {
+      margin-left: 40px;
+    }
 
-        .biru {color: blue;}
-        .merah {color: red;}
-        .pindah {margin-left: 120px;}
+    .p1 {
+      margin: 40px;
+    }
 
-    </style>
+    .p2 {
+      margin-right: 40px;
+    }
 
-    <head>
-        <title>Latihan</title>
-    </head>
+    .biru {
+      color: blue;
+    }
 
-    <body>
+    .merah {
+      color: red;
+    }
 
-        <div class="container">
-            <div class="kiri">
-                <h1 id="judul">Mission and Goals</h1>
-                <button type="button" id="tombol">mission</button>
-                <div class="m-4">
-                 <span id= "hasil"></span>
-                </div>
-                <p id="p1">He as spoke avoid given downs money on we. Of properly carriage shutters ye as wandered up repeated moreover. Article evident arrived express highest men did boy. Mistress sensible entirely am so. Quick can manor smart money hopes worth too.Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. Considered use dispatched melancholy sympathize discretion led.</p>
-             </div>
-    
-            <div class="kanan">
-                <h3>goals</h3>
-                <p>Article evident arrived express highest men did boy Mistress sensible entirely am so. Quick can manor smart money hopes worth too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. Considered use dispatched melancholy sympathize discretion led. Oh feel if up to till like.</p>
-                <img src="building.jpeg" id="gambar" alt="">
-            </div>
+    .pindah {
+      align-self: center;
+    }
+
+    /* POPUP atau MODAL */
+    .modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .modal-box {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgb(191, 248, 248);
+      padding: 1rem 1.5rem;
+      width: 24rem;
+      border-radius: 0.5rem;
+    }
+
+    .close-button {
+      float: right;
+      width: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 0.25rem;
+      background-color: rgb(248, 10, 10);
+    }
+
+    .show-modal {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+  </style>
+
+  <head>
+    <title>Latihan</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="section">
+        <h1 id="judul" class="judul">Mission and Goals</h1>
+        <button type="button" id="changeCSS" class="button">mission</button>
+        <div class="m-4">
+          <span id="hasil"></span>
         </div>
+        <p id="p1" class="p1">
+          He as spoke avoid given downs money on we. Of properly carriage
+          shutters ye as wandered up repeated moreover. Article evident arrived
+          express highest men did boy. Mistress sensible entirely am so. Quick
+          can manor smart money hopes worth too.Comfort produce husband boy her
+          had hearing. Law others theirs passed but wishes. You day real less
+          till dear read. Considered use dispatched melancholy sympathize
+          discretion led.
+        </p>
 
-        <script>
-            const tombol = document.getElementById('tombol');
-            const judull = document.getElementById('judul');
-            const p1 = document.getElementById('p1');
-            const gambar = document.getElementById('gambar');
-            var hasil = document.getElementById('hasil');
-            var no = 1;
+        <!-- Pop Up -->
+        <button type="button" id="popUp" class="button popup">PopUp</button>
+      </div>
 
-            tombol.onclick = function() {
-                judul.classList.toggle('biru')
-                p1.classList.toggle('merah')
-                gambar.classList.toggle('pindah')
-                hasil.innerHTML = 'Button di klik ' + no++ + ' kali';
-            }
-        </script>
+      <div class="section dua">
+        <h3>goals</h3>
+        <p class="p2">
+          Article evident arrived express highest men did boy Mistress sensible
+          entirely am so. Quick can manor smart money hopes worth too. Comfort
+          produce husband boy her had hearing. Law others theirs passed but
+          wishes. You day real less till dear read. Considered use dispatched
+          melancholy sympathize discretion led. Oh feel if up to till like.
+        </p>
+        <img src="building.jpeg" id="gambar" class="img" alt="" />
+      </div>
+    </div>
 
-    </body>
+    <div class="modal" id="modal">
+      <div class="modal-box">
+        <span class="close-button">X</span>
+        <h1>Coba Pop Up</h1>
+      </div>
+    </div>
+
+    <script>
+      let changeCSS = document.getElementById("changeCSS");
+      let no = 1;
+
+      changeCSS.onclick = function () {
+        document.getElementById("judul").classList.toggle("biru");
+        document.getElementById("p1").classList.toggle("merah");
+        document.getElementById("gambar").classList.toggle("pindah");
+        document.getElementById("hasil").innerHTML =
+          "Button di klik " + no++ + " kali";
+      };
+
+      let popUp = document.getElementById("popUp");
+      let modal = document.getElementById("modal");
+      let show = document.querySelector(".show");
+      let closepopUp = document.querySelector(".close-button");
+
+      popUp.onclick = function () {
+        modal.classList.toggle("show-modal");
+      };
+
+      closepopUp.onclick = function () {
+        modal.classList.remove("show-modal");
+      };
+    </script>
+  </body>
 </html>
